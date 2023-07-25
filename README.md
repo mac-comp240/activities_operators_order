@@ -157,7 +157,7 @@ testing: try 0, 1, the maximum unsigned int, and several values in between.
 - Examine the string outputs more closely
     - Open this [Manual page for ascii characters.](http://man7.org/linux/man-pages/man7/ascii.7.html) Make sure that your browser window is wide enough to display the acsii table nicely. This is from a typical linux manual page, or 'man page' for short. You can use this to see all of the ascii character codes used in strings.  
 
-### An aside about man pages
+#### An aside about man pages
 
 The command `man` is short for manual.  It is used to provide more information
 for various commands and other information in unix. You can try other commands
@@ -171,44 +171,34 @@ in your own terminal on the server, e.g.
 
 	man man
 
-
-Using `showbytes.c`, answer the following question in this README:
-  
-* How is the storage of each byte of a string different from the storage of the
-  bytes of an int? Consider the topic of Endianness again. Are strings Endian?
-
-### Note
-
-Strings have one extra character added to them called a *trailing null byte*.
+**Note:** Strings in C have one extra character added to them called a *trailing null byte*.
 The end of the string is signaled by having this one last character that is
 always a zero, which is not used for any ascii character. All strings have this
 and we need to account for it in our code, as we store strings as arrays of
 characters.
 
-Modify the function `string_leg()` to also print the trailing null byte of a
+#### Returning to the task
+
+- Using `showbytes.c`, answer the following question in this README:
+    -How is the storage of each byte of a string different from the storage of the bytes of an int? Consider the topic of Endianness again. Are strings Endian?
+
+- Modify the function `string_leg()` to also print the trailing null byte of a
 string. Discuss this with your teammates--how should you do this? Also change the
 string to add some other character from the ascii table other than a letter or
 number. Verify that you observe the correct ascii code for it.
 
-## 3.  Also try this: 
 
-Try changing the printf statement in the `show_bytes` function to look like this:
+- Try changing the printf statement in the `show_bytes` function to look like this:
+    - `printf("%p\t0x%.2x\n",start+i, start[i]);`
 
-	printf("%p\t0x%.2x\n",start+i, start[i]);
-
-`%p` tells printf to print the pointer address. `start` is pointing to the
+    - `%p` tells printf to print the pointer address. `start` is pointing to the
 zeroth element of an array of bytes. 
+    - Answer these questions in this README:
+      - What does this changed print statement do?
+      - How is the value for the pointer increasing in this loop? Discuss in terms of bytes.
 
-Answer these questions in this README:
-
-* What does this changed print statement do?
-
-* How is the value for the pointer increasing in this loop? Discuss in terms of bytes.
-
-## 4. Make the code work for long ints
-
-Add a function to show all the bytes of a `long` variable. Add to `main()` to use it on a couple examples.
-* How does the ordering of the `long` integers compare to the other integers, or to strings?
+- Add a function to `show_bytes.c` and `show_bytes.h` to show all the bytes of a `long` variable. Add to `main` to use it on a couple examples.
+    - How does the ordering of the `long` integers compare to the other integers, or to strings?
 
 
 ## References
