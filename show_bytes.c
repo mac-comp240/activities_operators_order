@@ -74,26 +74,6 @@ void show_byte_at_a_time(int val) {
 }
 
 
-
-// /*
-//  *  A couple more tries where we are casting ints to floats.
-//  */
-// void float_eg() {
-//   int x = 3490593;
-//   float f = (float) x;
-//   printf("For x = %d\n", x);
-//   show_int(x);
-//   show_float(f);
-
-//   x = 3510593;
-//   f = (float) x;
-//   printf("For x = %d\n", x);
-//   show_int(x);
-//   show_float(f);
-//
-//}
-
-
 /*
  *  negative values of short and int data types have
  *  two's complement representation.

@@ -2,9 +2,9 @@
 ## Put your name(s) here
 
 In this activity, you will explore the bitwise and logical operators, shifting, and integer byte order.
-- You will create a C program from scratch to check bitwise and logical operators
-- You will create a C program from scratch to ... shifting 
-- ???
+- You will modify a C program to practice with left and right shifting on different types of data 
+- You will modify a C program to practice using binary masks
+- You will modify a C program to view the bytes of different data types in order
 - You will update a Makefile to include multiple files and executables
 
 
@@ -149,14 +149,15 @@ testing: try 0, 1, the maximum unsigned int, and several values in between.
 
 
 - Read the code in `bytes.c` and its library, `show-bytes.c`.
-- Add an entry to the Makefil to compile this program (model it on the `bit_logical` entry)
+- Add an entry to the Makefile to compile this program (model it on the `bit_logical` entry)
 - Run the program, and compare its outputs to the code.
     - Answer this questions either here or in the Google Doc: Is this computer big-endian or little-endian?
     - What do you learn about `float` and pointer types from the output?
 - The `show_twos_comp` function displays a `short` value and its negative; work out what the negative of the given value is, and double-check that the output is correct
 - Examine the string outputs more closely
-    - Open this [Manual page for ascii characters.](http://man7.org/linux/man-pages/man7/ascii.7.html) Make sure that your browser window is wide enough to display the acsii table nicely. This is from a typical linux manual page, or 'man page' for short. You can use this to see all of the ascii character codes
-used in strings.  
+    - Open this [Manual page for ascii characters.](http://man7.org/linux/man-pages/man7/ascii.7.html) Make sure that your browser window is wide enough to display the acsii table nicely. This is from a typical linux manual page, or 'man page' for short. You can use this to see all of the ascii character codes used in strings.  
+
+### An aside about man pages
 
 The command `man` is short for manual.  It is used to provide more information
 for various commands and other information in unix. You can try other commands
@@ -171,7 +172,7 @@ in your own terminal on the server, e.g.
 	man man
 
 
-Using `showbytes.c`, answer the following question in your text file:
+Using `showbytes.c`, answer the following question in this README:
   
 * How is the storage of each byte of a string different from the storage of the
   bytes of an int? Consider the topic of Endianness again. Are strings Endian?
@@ -185,7 +186,7 @@ and we need to account for it in our code, as we store strings as arrays of
 characters.
 
 Modify the function `string_leg()` to also print the trailing null byte of a
-string. Discuss this with your neighbor--how should you do this? Also change the
+string. Discuss this with your teammates--how should you do this? Also change the
 string to add some other character from the ascii table other than a letter or
 number. Verify that you observe the correct ascii code for it.
 
@@ -198,14 +199,33 @@ Try changing the printf statement in the `show_bytes` function to look like this
 `%p` tells printf to print the pointer address. `start` is pointing to the
 zeroth element of an array of bytes. 
 
-Answer these questions in your text file:
+Answer these questions in this README:
 
 * What does this changed print statement do?
 
-* How is the value for the pointer increasing in this loop? Discuss in terms of
-  bytes.
+* How is the value for the pointer increasing in this loop? Discuss in terms of bytes.
 
 ## 4. Make the code work for long ints
 
-Add a function to show all the bytes of a `long` variable. Change `main()` to
-use it.
+Add a function to show all the bytes of a `long` variable. Add to `main()` to use it on a couple examples.
+* How does the ordering of the `long` integers compare to the other integers, or to strings?
+
+
+## References
+
+- ASCII table
+  - [Manual page for ascii characters.](http://man7.org/linux/man-pages/man7/ascii.7.html)
+- Man pages
+   - [Linux Man Page project](https://man7.org/linux/man-pages/)
+   - [How to use man in the terminal](https://www.geeksforgeeks.org/man-command-in-linux-with-examples/)
+- Makefile guides
+  - [An Introduction to Makefiles](https://www.gnu.org/software/make/manual/html_node/Introduction.html), by GNU
+  - [Makefile Tutorials and Examples to Build From](https://earthly.dev/blog/make-tutorial/), by Aniket Bhattacharyea
+  - [makefile basics - anthony explains](https://www.youtube.com/watch?v=20GC9mYoFGs)
+- Printf formatting codes
+  - [printf format specifier reference from cplusplus.com](http://www.cplusplus.com/reference/cstdio/printf/).
+  [_Format Specifiers in C_](https://www.thecrazyprogrammer.com/2016/10/format-specifiers-c.html) by The Crazy Programmer- General C syntax help
+  - [Chapter 1 of _Dive into Systems_](https://diveintosystems.org/book/C1-C_intro/index.html)
+  - _The C Programming Language_, often just known as K&R for Kernighan and Ritchie
+  - _C: A Reference Manual_, by Harbitson and Steele
+
