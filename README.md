@@ -24,7 +24,7 @@ the Makefile so that we can make all the executables by running `make all`:
 - `shifts.c`
     - Starter code for experimenting with shift operators
 - `bytes.c`
-    - 
+    - Starter code, main program, for viewing data byte by byte
 - `show-bytes.c`
     - A library file with code to display the bytes of an integer
 
