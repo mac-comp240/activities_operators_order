@@ -25,7 +25,7 @@ the Makefile so that we can make all the executables by running `make all`:
     - Starter code for experimenting with shift operators
 - `bytes.c`
     - Starter code, main program, for viewing data byte by byte
-- `show-bytes.c`
+- `show_-_bytes.c` and `show_bytes.h`
     - A library file with code to display the bytes of an integer
 
 
@@ -214,7 +214,8 @@ zeroth element of an array of bytes.
   - [makefile basics - anthony explains](https://www.youtube.com/watch?v=20GC9mYoFGs)
 - Printf formatting codes
   - [printf format specifier reference from cplusplus.com](http://www.cplusplus.com/reference/cstdio/printf/).
-  [_Format Specifiers in C_](https://www.thecrazyprogrammer.com/2016/10/format-specifiers-c.html) by The Crazy Programmer- General C syntax help
+  [_Format Specifiers in C_](https://www.thecrazyprogrammer.com/2016/10/format-specifiers-c.html) by The Crazy Programmer
+- General C syntax help
   - [Chapter 1 of _Dive into Systems_](https://diveintosystems.org/book/C1-C_intro/index.html)
   - _The C Programming Language_, often just known as K&R for Kernighan and Ritchie
   - _C: A Reference Manual_, by Harbitson and Steele
