@@ -40,7 +40,11 @@ int main() {
 	free(result_str);
 	result_str = uchar_to_bin_str(sresult);
 	printf("%hhX\t%s\n", sresult, result_str);  //print with a newline
-	
+
+	/* We need to free the space that we've allocated in each of our 
+	 *  uchar_to_bin_str() calls. If you examine the code in bit_logical.c,
+	 *  you should be able to find the malloc() calls!
+	 */
 	free(result_str);
 	free(bin_str_x);
 	//////////////////////// end first example
