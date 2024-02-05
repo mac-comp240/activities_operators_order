@@ -37,7 +37,7 @@ By convention, we also make a last label called `clean` which removes all the ex
 
 In between, each executable has its own label, dependencies and is then compiled based on its own indented command(s).
 
-**You will edit the Makefile to make it have this behavior.**
+**In each task, you will edit the Makefile to make it have this behavior.**
 
 Recall that Makefiles require a tab character before a command under a given target, 
 not spaces. If you have trouble getting your Makefile to work and it *looks* correct, 
